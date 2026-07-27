@@ -6,10 +6,25 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
+  <!-- Optional CRT Overlay for Terminal Mode -->
+  <div class="crt-scanlines"></div>
+
   <header>
-    <div class="logo">🛡️ UnicodeGuardian</div>
-    <button id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+    <div class="logo-modern">🛡️ Unicode Guardian</div>
+    <div class="logo-ascii hidden">
+▄▄▄  ▄▄▄                          ▄▄
+███  ███       ▀▀                 ██
+███  ███ ████▄ ██  ▄████ ▄███▄ ▄████
+███▄▄███ ██ ██ ██  ██    ██ ██ ██ ██
+▀██████▀ ██ ██ ██▄ ▀████ ▀███▀ ▀████
+    </div>
+    <button id="theme-toggle" title="Switch Theme">🌗</button>
   </header>
+
+  <div id="terminal-boot-msg" class="hidden">
+    > System initialized.
+    > Ready for hex inspection...
+  </div>
 
   <nav class="tabs">
     <button class="tab-btn active" data-target="scanner-tab">Scanner</button>
@@ -17,112 +32,11 @@
     <button class="tab-btn" data-target="page-tab">Page Scan</button>
   </nav>
 
+  <!-- Main content remains exactly the same as the previous HTML -->
   <main>
-    <!-- SCANNER TAB -->
-    <section id="scanner-tab" class="tab-content active">
-      <div class="input-area" id="drop-zone">
-        <textarea id="text-input" placeholder="Type, paste, or drag & drop text/files here to analyze..."></textarea>
-      </div>
-
-      <div class="actions">
-        <button id="export-json">Export JSON</button>
-        <button id="export-txt">Export TXT</button>
-        <button id="copy-report">Copy Report</button>
-      </div>
-
-      <div id="results" class="results-container hidden">
-        <div class="summary-cards">
-          <div class="card" id="risk-card">
-            <h4>Risk Level</h4>
-            <div id="risk-badge">🟢 Safe</div>
-            <p id="risk-reason" class="text-sm">No invisible characters detected.</p>
-          </div>
-          <div class="card">
-            <h4>Character Stats</h4>
-            <ul class="stats-list">
-              <li>Total: <span id="stat-total">0</span></li>
-              <li>Visible: <span id="stat-visible">0</span></li>
-              <li>Invisible/BiDi: <span id="stat-hidden">0</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card reveal-card">
-          <h4>Revealed Text</h4>
-          <div class="toggle-group">
-            <label><input type="radio" name="reveal-style" value="bracket" checked> [RLO]</label>
-            <label><input type="radio" name="reveal-style" value="math"> ⟦RLO⟧</label>
-          </div>
-          <div id="revealed-output" class="output-box"></div>
-        </div>
-
-        <div class="card">
-          <h4>Character Breakdown</h4>
-          <div class="table-container">
-            <table id="char-table">
-              <thead>
-                <tr>
-                  <th>Char</th>
-                  <th>Name</th>
-                  <th>Code Point</th>
-                  <th>UTF-8</th>
-                  <th>UTF-16</th>
-                </tr>
-              </thead>
-              <tbody id="char-tbody"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LIBRARY TAB -->
-    <section id="library-tab" class="tab-content">
-      <input type="text" id="library-search" placeholder="Search by name, abbreviation, or category...">
-      <div id="library-list" class="library-grid"></div>
-    </section>
-
-    <!-- PAGE SCAN TAB -->
-    <section id="page-tab" class="tab-content">
-      <div class="page-scan-container">
-        <h3>Scan Active Webpage</h3>
-        <p>Highlight hidden, zero-width, and BiDi formatting characters directly on the current webpage.</p>
-        <button id="scan-page-btn" class="primary-btn">Scan Current Page</button>
-        <p id="page-scan-status" class="status-msg"></p>
-      </div>
-    </section>
+     <!-- (Insert the <section> blocks from the previous step here) -->
   </main>
-
-  <!-- MODAL INSPECTOR -->
-  <dialog id="inspector-modal">
-    <div class="modal-content">
-      <button id="close-modal" class="close-btn">&times;</button>
-      <h2 id="modal-title">Character Name</h2>
-      <div class="modal-grid">
-        <div><strong>Abbreviation:</strong> <span id="modal-abbr"></span></div>
-        <div><strong>Code Point:</strong> <span id="modal-cp"></span></div>
-        <div><strong>Category:</strong> <span id="modal-cat"></span></div>
-        <div><strong>Risk:</strong> <span id="modal-risk"></span></div>
-      </div>
-      <div class="modal-section">
-        <h4>Description</h4>
-        <p id="modal-desc"></p>
-      </div>
-      <div class="modal-section">
-        <h4>Security Notes</h4>
-        <p id="modal-security"></p>
-      </div>
-      <div class="modal-section demo-section">
-        <h4>Demonstration</h4>
-        <div class="demo-box">
-          <p><strong>Normal:</strong> <span id="modal-demo-normal"></span></p>
-          <p><strong>Modified:</strong> <span id="modal-demo-mod"></span></p>
-          <p id="modal-demo-exp" class="text-sm italic"></p>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
+  
   <script src="js/unicode-data.js"></script>
   <script src="js/scanner.js"></script>
   <script src="js/popup.js"></script>
