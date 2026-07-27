@@ -1,14 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Theme Toggle
+  // Theme Toggle (Light -> Dark -> Terminal -> Light)
   const themeToggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('ug-theme') || 'light';
-  document.body.setAttribute('data-theme', savedTheme);
+  const themes = ['light', 'dark', 'terminal'];
+  const icons = ['🌓', '🌙', '💻']; // Visual indicator of current state
+  
+  let currentThemeIndex = themes.indexOf(localStorage.getItem('ug-theme') || 'light');
+  if (currentThemeIndex === -1) currentThemeIndex = 0;
+  
+  // Initialize
+  document.body.setAttribute('data-theme', themes[currentThemeIndex]);
+  themeToggle.textContent = icons[currentThemeIndex];
   
   themeToggle.addEventListener('click', () => {
-    const current = document.body.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.body.setAttribute('data-theme', next);
-    localStorage.setItem('ug-theme', next);
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    const nextTheme = themes[currentThemeIndex];
+    
+    document.body.setAttribute('data-theme', nextTheme);
+    themeToggle.textContent = icons[currentThemeIndex];
+    localStorage.setItem('ug-theme', nextTheme);
   });
 
   // Tab Switching
