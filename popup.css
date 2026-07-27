@@ -271,3 +271,107 @@ dialog::backdrop {
 .modal-section { margin-bottom: 15px; font-size: 0.9rem; }
 .modal-section h4 { margin: 0 0 5px 0; }
 .demo-box { background: var(--bg-color); padding: 10px; border-radius: 4px; border: 1px solid var(--border); }
+
+/* =========================================
+   TERMINAL MODE (RETRO THEME)
+   ========================================= */
+[data-theme="terminal"] {
+  --bg-color: #080808;
+  --panel-bg: #000000;
+  --text-main: #33ff00;
+  --text-muted: #00aa00;
+  --border: #33ff00;
+  --primary: #00ffff;
+  --primary-hover: #33ff00;
+  --danger: #ff003c;
+  --warning: #ffcc00;
+  --info: #00ffff;
+  --font-family: "Courier New", Courier, monospace;
+}
+
+[data-theme="terminal"] body {
+  text-shadow: 0 0 4px rgba(51, 255, 0, 0.4);
+}
+
+/* Swap Logos */
+[data-theme="terminal"] .logo-modern { display: none; }
+[data-theme="terminal"] .logo-ascii {
+  display: block !important;
+  white-space: pre;
+  font-size: 8px;
+  line-height: 1.1;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+/* Terminal Boot Message */
+#terminal-boot-msg {
+  display: none;
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+[data-theme="terminal"] #terminal-boot-msg {
+  display: block;
+}
+
+/* Sharp, Dashed Borders & Blocky UI */
+[data-theme="terminal"] textarea, 
+[data-theme="terminal"] .card, 
+[data-theme="terminal"] button,
+[data-theme="terminal"] input,
+[data-theme="terminal"] dialog,
+[data-theme="terminal"] .lib-item {
+  border-radius: 0 !important;
+  border-style: dashed;
+}
+
+[data-theme="terminal"] button:hover {
+  background-color: #33ff00;
+  color: #000;
+  border-style: solid;
+  text-shadow: none;
+}
+
+/* Blinking Cursor Input */
+[data-theme="terminal"] textarea:focus {
+  outline: none;
+  border-style: solid;
+  box-shadow: inset 0 0 0 1px var(--primary);
+  animation: terminal-blink 1s step-end infinite;
+}
+
+@keyframes terminal-blink {
+  50% { border-color: transparent; }
+}
+
+/* CRT Scanline Overlay */
+.crt-scanlines {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), 
+  linear-gradient(90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+[data-theme="terminal"] .crt-scanlines {
+  display: block;
+}
+
+/* ASCII Separators for Tables */
+[data-theme="terminal"] th, 
+[data-theme="terminal"] td {
+  border-bottom: 1px dashed var(--border);
+}
