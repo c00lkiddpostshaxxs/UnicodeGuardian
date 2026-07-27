@@ -38,7 +38,7 @@ UnicodeGuardian is a professional browser extension designed to help developers,
 - `js/content.js`: Page manipulation script for highlighting active DOM nodes.
 
 ### Future improvements
-- Add support for indentifying visually confusable (homoglyph) characters.
+- Add support for identifying visually confusable (homoglyph) characters.
 - Enhance the file scanning to explicitly parse binary strings if dropped.   
 
 *Created for transparency, education, and text safety.*
