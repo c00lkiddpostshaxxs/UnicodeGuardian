@@ -18,4 +18,4 @@ Unicode Guardian is a professional browser extension designed to help developers
 
 ### Features
 * L
- *
+  *
