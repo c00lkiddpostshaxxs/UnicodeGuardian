@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Background Shield -->
+  <path d="M 64 12 L 108 30 L 108 72 C 108 100 64 116 64 116 C 64 116 20 100 20 72 L 20 30 Z" fill="#3B82F6" stroke="#1E3A8A" stroke-width="6" stroke-linejoin="round" />
+
+  <!-- Inner Shield Highlight -->
+  <path d="M 64 24 L 96 38 L 96 70 C 96 90 64 102 64 102 C 64 102 32 90 32 70 L 32 38 Z" fill="#60A5FA" />
+
+  <!-- The 'U' -->
+  <path d="M 48 50 L 48 70 C 48 82 80 82 80 70 L 80 50" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Magnifying Glass Handle -->
+  <line x1="90" y1="90" x2="112" y2="112" stroke="#B45309" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Magnifying Glass Frame -->
+  <circle cx="80" cy="80" r="18" fill="#FBBF24" stroke="#D97706" stroke-width="6" />
+
+  <!-- Magnifying Glass Glass -->
+  <circle cx="80" cy="80" r="12" fill="#FFFFFF" fill-opacity="0.6" />
+</svg>
