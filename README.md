@@ -40,4 +40,5 @@ UnicodeGuardian is a professional browser extension designed to help developers,
 ### Future improvements
 - Add support for indentifying visually confusable (homoglyph) characters.
 - Enhance the file scanning to explicitly parse binary strings if dropped.   
+
 *Created for transparency, education, and text safety.*
