@@ -14,7 +14,7 @@
 '   .'|  '/|  |   |  |                 `                                                 \'. __// '   .'|  '/\ \._,\ '/|_|                     \ \._,\ '/|  |   |  | 
  `-'  `--' '--'   '--'                                                                    `'---'   `-'  `--'  `--'  `"                          `--'  `" '--'   '--' 
 ```
-Unicode Guardian is a professional browser extension designed to help developers, security researchers, moderators, and curious users discover, inspect, and safely analyze hidden Unicode characters (BiDi controls, zero-width characters, and invisible formatting).
+UnicodeGuardian is a professional browser extension designed to help developers, security researchers, moderators, and curious users discover, inspect, and safely analyze hidden Unicode characters (BiDi controls, zero-width characters, and invisible formatting).
 
 ### Features
-   *
+  ⚬
