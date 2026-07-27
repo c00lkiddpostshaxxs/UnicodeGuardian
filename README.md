@@ -1,4 +1,12 @@
-# UnicodeGuardian
+<div align="center">
+  <img width="217" height="217" src="./icons/github.svg" alt="Logo">
+</div>
+
+<div align="center">
+  <h1><b>UnicodeGuardian</b></h1>
+  <p><i>Inspect. Reveal. Understand hidden Unicode.</i></p>
+</div>
+
 ```text
 ▄▄▄  ▄▄▄                          ▄▄        ▄▄▄▄▄▄▄                       ▄▄                 
 ███  ███       ▀▀                 ██       ███▀▀▀▀▀                       ██ ▀▀              
