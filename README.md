@@ -17,6 +17,4 @@
 UnicodeGuardian is a professional browser extension designed to help developers, security researchers, moderators, and curious users discover, inspect, and safely analyze hidden Unicode characters (BiDi controls, zero-width characters, and invisible formatting).
 
 ### Features
-<pre>
-⚬ L
-</pre>
+- **Live Text & File Scanner**:
